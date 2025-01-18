@@ -23,8 +23,9 @@ void imprimirFibonacci(x){
 
 int main(){
 
-    // Impressão dos 10 primerios elementos da sequência de Fibonacci
-    imprimirFibonacci(15);
+    int x;
+    scanf("%d", &x);
+    imprimirFibonacci(x);
     
     return 0;
 }
