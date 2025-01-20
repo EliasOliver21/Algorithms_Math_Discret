@@ -1,14 +1,15 @@
 #include <stdio.h>
 
-int teo_ch(int x){
+int teo_ch(int qtde_eq){
     
-    int a[x];
-    int m[x];
-    int N[x];
+    int a[qtde_eq];
+    int m[qtde_eq];
+    int N[qtde_eq];
+    int x[qtde_eq];
     int n;
 
     // Inserindo valor da congruencia e universo utilizado
-    for (int i = 0; i < x; i++)
+    for (int i = 0; i < qtde_eq; i++)
     {
         scanf("%d %d", &a[i], &m[i]);
     }
@@ -16,13 +17,13 @@ int teo_ch(int x){
     n = m[0];
 
     // salvando a multiplicação dos uuniversos em n
-    for (int i = 1; i < x; i++)
+    for (int i = 1; i < qtde_eq; i++)
     {
         n = n * m[i];
     }
 
     // Definindo os valores de N
-    switch (x)
+    switch (qtde_eq)
     {    
     case 3:
 
@@ -42,16 +43,69 @@ int teo_ch(int x){
     default:
         break;
     }
-    
+
+    int var_con = 0;
+
+    int countx;
+
+    while(var_con < 1){
+
+        int s = N[0] * countx;
+        
+        if (s % m[0] == 1){
+
+            var_con = 1;
+            x[0] = countx;
+            
+        }
+        countx++;
+    }
+
+    var_con = 0;
+
+    countx = 0;
+
+    while(var_con < 1){
+
+        int s = N[1] * countx;
+        
+        if (s % m[1] == 1){
+
+            var_con = 1;
+            x[1] = countx;
+            
+        }
+        countx++;
+    }
+
+    var_con = 0;
+
+    countx = 0;
+
+    while(var_con < 1){
+
+        int s = N[2] * countx;
+        
+        if (s % m[2] == 1){
+
+            var_con = 1;
+            x[2] = countx;
+            
+        }
+        countx++;
+    }
 
 
-    for (int i = 0; i < x; i++)
+    for (int i = 0; i < qtde_eq; i++)
     {
-        printf("%d\n", N[i]);
+        printf("%d\n", x[i]);
     }
     
-    printf("%d\n", n);
+
+
+    //Resultado final: Somatório(a * N * x)
     
+
 
 }
 
