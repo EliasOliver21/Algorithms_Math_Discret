@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-// Função para calcular o dígito verificador do ISBN-10
+
 int calcula_digito_isbn(int isbn[9]) {
     int soma = 0;
 
-    // Cálculo do dígito verificador
+    
     for (int i = 0; i < 9; i++) {
         soma += isbn[i] * (10 - i);
     }
     int digito = 11 - (soma % 11);
-    if (digito == 10) return 'X'; // Caso especial
+    if (digito == 10) return 'X'; 
     if (digito == 11) return 0;
     return digito;
 }
