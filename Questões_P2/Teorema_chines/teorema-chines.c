@@ -31,26 +31,13 @@ int teo_ch(int qtde_eq){
         N[1] = m[0] * m[2];
         N[2] = m[0] * m[1];
 
-        break;
-    
-    case 4:
-
-        N[0] = m[1] * m[2] * m[3];
-        N[1] = m[0] * m[2] * m[3];
-        N[2] = m[0] * m[1] * m[3];
-        N[3] = m[0] * m[1] * m[2];
-        break;
-    default:
-        break;
-    }
-
     int var_con = 0;
 
-    int countx;
+    int countx = 1;
 
     while(var_con < 1){
 
-        int s = N[0] * countx;
+        long int s = N[0] * countx;
         
         if (s % m[0] == 1){
 
@@ -61,13 +48,15 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
+    printf("%d\n", x[0]);
+
     var_con = 0;
 
-    countx = 0;
+    countx = 1;
 
     while(var_con < 1){
 
-        int s = N[1] * countx;
+        long int s = N[1] * countx;
         
         if (s % m[1] == 1){
 
@@ -78,13 +67,15 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
+    printf("%d\n", x[1]);
+
     var_con = 0;
 
-    countx = 0;
+    countx = 1;
 
     while(var_con < 1){
 
-        int s = N[2] * countx;
+        long int s = N[2] * countx;
         
         if (s % m[2] == 1){
 
@@ -95,21 +86,124 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
+    printf("%d\n", x[2]);
 
-    for (int i = 0; i < qtde_eq; i++)
-    {
-        printf("%d\n", x[i]);
+        break;
+    
+    case 4:
+
+        N[0] = m[1] * m[2] * m[3];
+        N[1] = m[0] * m[2] * m[3];
+        N[2] = m[0] * m[1] * m[3];
+        N[3] = m[0] * m[1] * m[2];
+        
+    int var_con = 0;
+
+    int countx = 1;
+
+    while(var_con < 1){
+
+        long int s = N[0] * countx;
+        
+        if (s % m[0] == 1){
+
+            var_con = 1;
+            x[0] = countx;
+            
+        }
+        countx++;
     }
+
+    printf("%d\n", x[0]);
+
+    var_con = 0;
+
+    countx = 1;
+
+    while(var_con < 1){
+
+        long int s = N[1] * countx;
+        
+        if (s % m[1] == 1){
+
+            var_con = 1;
+            x[1] = countx;
+            
+        }
+        countx++;
+    }
+
+    printf("%d\n", x[1]);
+
+    var_con = 0;
+
+    countx = 1;
+
+    while(var_con < 1){
+
+        long int s = N[2] * countx;
+        
+        if (s % m[2] == 1){
+
+            var_con = 1;
+            x[2] = countx;
+            
+        }
+        countx++;
+    }
+
+    printf("%d\n", x[2]);
+
+       
+
+    var_con = 0;
+
+    countx = 1;
+
+    while(var_con < 1){
+
+        long int s = N[3] * countx;
+        
+        if (s % m[3] == 1){
+
+            var_con = 1;
+            x[3] = countx;
+            
+        }
+        countx++;
+    }
+
+    printf("%d\n", x[3]);
+
+    default:
+        break;
+    }
+
+        
+    int result;
+
+    switch (qtde_eq){
     
+    case 3:
+
+        result = (a[0] * N[0] * x[0]) + (a[1] * N[1] * x[1]) + (a[2] * N[2] * x[2]);
+
+    case 4:
+
+        result = (a[0] * N[0] * x[0]) + (a[1] * N[1] * x[1]) + (a[2] * N[2] * x[2]) + (a[3] * N[3] * x[3]);
 
 
-    //Resultado final: Somatório(a * N * x)
+        break;
     
+    default:
+        break;
+    }
 
+        
+
+    return result;
 
 }
-
-
 
 
 int main(){
