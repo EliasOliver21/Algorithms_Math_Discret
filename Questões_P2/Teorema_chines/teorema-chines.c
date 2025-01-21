@@ -16,6 +16,10 @@ int teo_ch(int qtde_eq){
 
     n = m[0];
 
+    int var_con = 0;
+
+    int countx = 1;
+
     // salvando a multiplicação dos uuniversos em n
     for (int i = 1; i < qtde_eq; i++)
     {
@@ -31,9 +35,9 @@ int teo_ch(int qtde_eq){
         N[1] = m[0] * m[2];
         N[2] = m[0] * m[1];
 
-    int var_con = 0;
+    var_con = 0;
 
-    int countx = 1;
+    countx = 1;
 
     while(var_con < 1){
 
@@ -97,9 +101,9 @@ int teo_ch(int qtde_eq){
         N[2] = m[0] * m[1] * m[3];
         N[3] = m[0] * m[1] * m[2];
         
-    int var_con = 0;
+    var_con = 0;
 
-    int countx = 1;
+    countx = 1;
 
     while(var_con < 1){
 
@@ -199,7 +203,7 @@ int teo_ch(int qtde_eq){
         break;
     }
 
-        
+    result = result % n;        
 
     return result;
 
@@ -208,12 +212,12 @@ int teo_ch(int qtde_eq){
 
 int main(){
 
-    printf("Digite a quantidade de equações para o sistema de congruências a ser resolvido\n");
+    printf("Digite a quantidade de equações para o sistema de congruências a ser resolvido. Após isso digite linha a linha o valor de b e m das congruências a serem solucionadas.\n");
 
     int equacoes;
 
     scanf("%d", &equacoes);
 
-    teo_ch(equacoes);
+    printf("%d\n", teo_ch(equacoes));
 
 }
