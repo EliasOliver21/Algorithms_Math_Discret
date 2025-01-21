@@ -28,7 +28,16 @@ int teo_ch(int qtde_eq){
 
     // Definindo os valores de N
     switch (qtde_eq)
-    {    
+    {
+
+    case 1:
+
+        break;
+
+    case 2:
+
+        break;
+
     case 3:
 
         N[0] = m[1] * m[2];
@@ -39,6 +48,7 @@ int teo_ch(int qtde_eq){
 
     countx = 1;
 
+    //X0
     while(var_con < 1){
 
         long int s = N[0] * countx;
@@ -52,12 +62,10 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
-    printf("%d\n", x[0]);
-
     var_con = 0;
 
     countx = 1;
-
+    //X1
     while(var_con < 1){
 
         long int s = N[1] * countx;
@@ -71,12 +79,11 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
-    printf("%d\n", x[1]);
-
     var_con = 0;
 
     countx = 1;
-
+    
+    //X2
     while(var_con < 1){
 
         long int s = N[2] * countx;
@@ -90,9 +97,7 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
-    printf("%d\n", x[2]);
-
-        break;
+    break;
     
     case 4:
 
@@ -104,7 +109,7 @@ int teo_ch(int qtde_eq){
     var_con = 0;
 
     countx = 1;
-
+    //X0
     while(var_con < 1){
 
         long int s = N[0] * countx;
@@ -118,12 +123,10 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
-    printf("%d\n", x[0]);
-
     var_con = 0;
 
     countx = 1;
-
+    //X1
     while(var_con < 1){
 
         long int s = N[1] * countx;
@@ -137,12 +140,11 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
-    printf("%d\n", x[1]);
-
     var_con = 0;
 
     countx = 1;
-
+    
+    //X2
     while(var_con < 1){
 
         long int s = N[2] * countx;
@@ -154,16 +156,13 @@ int teo_ch(int qtde_eq){
             
         }
         countx++;
-    }
-
-    printf("%d\n", x[2]);
-
-       
+    }      
 
     var_con = 0;
 
     countx = 1;
 
+    //X3
     while(var_con < 1){
 
         long int s = N[3] * countx;
@@ -177,7 +176,7 @@ int teo_ch(int qtde_eq){
         countx++;
     }
 
-    printf("%d\n", x[3]);
+    break;
 
     default:
         break;
@@ -192,18 +191,25 @@ int teo_ch(int qtde_eq){
 
         result = (a[0] * N[0] * x[0]) + (a[1] * N[1] * x[1]) + (a[2] * N[2] * x[2]);
 
+        result = result % n; 
+
+        break;
+
     case 4:
 
         result = (a[0] * N[0] * x[0]) + (a[1] * N[1] * x[1]) + (a[2] * N[2] * x[2]) + (a[3] * N[3] * x[3]);
 
+        result = result % n; 
 
         break;
     
     default:
+
+        return 1;
+
         break;
     }
-
-    result = result % n;        
+      
 
     return result;
 
